@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Sales</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <h1>Menu</h1>
+    <div class="menu-container">
+        <div class="menu-item" data-name="GUIOZÁ" data-price="12.00">
+            <h2>Prato Chefe</h2>
+            <p>GUIOZÁ - R$12,00 <span><i>Carne de porco, repolho, gengibre, alho</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-1" value="Na chapa" checked> Na chapa</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="VACA" data-price="14.00">
+            <p>VACA - R$14,00 <span><i>Carne de vaca, molho de soja, cebola, alho</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-2" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-2" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="FRANGO" data-price="13.00">
+            <p>FRANGO - R$13,00 <span><i>Carne de frango, pimentão, cebola, alho</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-3" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-3" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="PORCO" data-price="15.00">
+            <p>PORCO - R$15,00 <span><i>Carne de porco, molho de soja, gengibre, alho</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-4" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-4" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="VACA COM CURRY" data-price="14.00">
+            <p>VACA COM CURRY - R$14,00 <span><i>Carne de vaca, curry, cenoura, batata</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-5" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-5" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="FRANGO COM CURRY" data-price="13.00">
+            <p>FRANGO COM CURRY - R$13,00 <span><i>Carne de frango, curry, cenoura, batata</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-6" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-6" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="VERDURA COM CURRY" data-price="12.00">
+            <p>VERDURA COM CURRY - R$12,00 <span><i>Brócolis, curry, cenoura, batata</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-7" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-7" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="VACA CARÊ" data-price="15.00">
+            <p>VACA CARÊ - R$15,00 <span><i>Carne de vaca, molho curry, batata, cenoura</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-8" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-8" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="FRANGO CARÊ" data-price="14.00">
+            <p>FRANGO CARÊ - R$14,00 <span><i>Carne de frango, molho curry, batata, cenoura</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-9" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-9" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" data-name="VERDURA CARÊ" data-price="13.00">
+            <p>VERDURA CARÊ - R$13,00 <span><i>Brócolis, molho curry, batata, cenoura</i></span></p>
+            <button class="select-button">Selecionar</button>
+            <div class="controls hidden">
+                <div class="quantity">
+                    <button class="decrement">-</button>
+                    <span class="quantity-display">0</span>
+                    <button class="increment">+</button>
+                </div>
+                <div class="preparation">
+                    <p>Modo de preparo?</p>
+                    <label><input type="radio" name="preparation-10" value="Na chapa"> Na chapa</label>
+                    <label><input type="radio" name="preparation-10" value="Tradicional"> Tradicional</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart">
+        <h2>Carrinho de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: R$<span id="total-price">0.00</span></p>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
