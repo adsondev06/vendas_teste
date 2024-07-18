@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <h1>Menu</h1>
+    <h1>Cardápio</h1>
     <div class="menu-container">
         <div class="menu-item" data-name="GUIOZÁ" data-price="12.00">
-            <h2>Prato Chefe</h2>
-            <p>GUIOZÁ - R$12,00 <span><i>Carne de porco, repolho, gengibre, alho</i></span></p>
+            <span class="chefe">Prato chefe</span><p>GUIOZÁ - R$ 12,00<span><i>Carne de porco, repolho, gengibre, alho</i></span></p>
             <button class="select-button">Selecionar</button>
             <div class="controls hidden">
-                <div class="quantity">
+                <div class="quantity">   
                     <button class="decrement">-</button>
                     <span class="quantity-display">0</span>
-                    <button class="increment">+</button>
+                    <button class="increment">+</button>    
                 </div>
                 <div class="preparation">
                     <p>Modo de preparo?<span class="required-symbol"></span></p>
                     <label><input type="radio" name="preparation-1" value="Na chapa" checked> Na chapa</label>
-                </div>
+                </div>  
             </div>
         </div>
         <div class="menu-item" data-name="VACA" data-price="14.00">
@@ -172,10 +171,17 @@
     </div>
 
     <div id="cart">
-        <h2>Carrinho de Compras</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: R$<span id="total-price">0.00</span></p>
+        <div id="cart-counter">0</div>
+        <button id="cart-toggle" class="cart-toggle">🛒</button>
+        <div id="cart-content" class="hidden">
+            <ul id="cart-items">
+                <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
+            </ul>
+            <div id="total-price">Total: R$0.00</div><button id="prosseguir">Continuar</button>
+        </div>
     </div>
+    
+    
 
     <script src="JS/script.js"></script>
 </body>
