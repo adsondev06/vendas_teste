@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             quantities[itemName][preparation] = currentQuantity;
 
-            updateCart(itemName, itemPrice, 1, preparation); // Sempre atualiza com 1 unidade adicionada
+            updateCart(itemName, itemPrice, currentQuantity, preparation); // Atualiza com a quantidade correta
             highlightSelectedPreparation(menuItem, preparation); // Chama a função de destaque sem temporizador
 
             updateCartCounter(); // Atualiza o contador após alterar o carrinho
@@ -86,10 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 quantities[itemName][preparation] = currentQuantity;
 
-                updateCart(itemName, itemPrice, -1, preparation); // Sempre atualiza com 1 unidade removida
+                updateCart(itemName, itemPrice, currentQuantity, preparation); // Atualiza com a quantidade correta
                 highlightSelectedPreparation(menuItem, preparation); // Chama a função de destaque sem temporizador
 
                 updateCartCounter(); // Atualiza o contador após alterar o carrinho
+
+                // Limpa o carrinho se não houver itens
+                if (cartItems.children.length === 0) {
+                    clearCart();
+                }
             }
         });
     });
@@ -140,28 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
         return selectedPreparation;
     }
 
-    function updateCart(itemName, itemPrice, quantityChange, preparation) {
+    function updateCart(itemName, itemPrice, currentQuantity, preparation) {
         const existingCartItem = [...cartItems.children].find(cartItem =>
             cartItem.getAttribute('data-name') === itemName &&
             cartItem.getAttribute('data-preparation') === preparation
         );
 
         if (existingCartItem) {
-            let currentQuantity = parseInt(existingCartItem.getAttribute('data-quantity')) || 0;
-            currentQuantity += quantityChange;
-
             if (currentQuantity <= 0) {
                 existingCartItem.remove();
+                // Limpa o carrinho se não houver itens
+                if (cartItems.children.length === 0) {
+                    clearCart();
+                }
             } else {
                 existingCartItem.textContent = `${currentQuantity} x ${itemName} (${preparation}) - R$${itemPrice.toFixed(2)}`;
                 existingCartItem.setAttribute('data-quantity', currentQuantity);
             }
-        } else if (quantityChange > 0) {
+        } else if (currentQuantity > 0) {
             const listItem = document.createElement('li');
-            listItem.textContent = `${quantityChange} x ${itemName} (${preparation}) - R$${itemPrice.toFixed(2)}`;
+            listItem.textContent = `${currentQuantity} x ${itemName} (${preparation}) - R$${itemPrice.toFixed(2)}`;
             listItem.setAttribute('data-name', itemName);
             listItem.setAttribute('data-preparation', preparation);
-            listItem.setAttribute('data-quantity', quantityChange);
+            listItem.setAttribute('data-quantity', currentQuantity);
             cartItems.appendChild(listItem);
         }
 
@@ -213,7 +219,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
+    function clearCart() {
+        while (cartItems.firstChild) {
+            cartItems.removeChild(cartItems.firstChild);
+        }
+        updateTotalPrice();
+        updateCartCounter();
+    }
+
     // Mostra ou esconde o modal do carrinho ao clicar no botão de toggle
     cartToggle.addEventListener('click', () => {
         cartModal.classList.toggle('open');
