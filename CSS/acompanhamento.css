@@ -1,0 +1,250 @@
+/* Reset básico para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px; /* Adiciona margem superior aos títulos h2 */
+}
+
+/* Adiciona margem inferior aos labels */
+label {
+    display: block; /* Garante que cada label fique em uma nova linha */
+   ; /* Margem inferior para separar os itens dentro da seção */
+}
+
+#order-utensils input:first-of-type,
+#order-select input:first-of-type {
+    margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+/* Estilo dos itens de acompanhamento */
+.accompaniment-item {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.accompaniment-item span {
+    font-size: 16px;
+    margin-right: 10px; /* Espaço entre o texto e os botões */
+    flex: 1; /* Faz com que o texto ocupe o espaço restante */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre os botões e a quantidade */
+}
+
+.increment, .decrement {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: none; /* Garante que os botões não se estiquem */
+}
+
+.decrement {
+    background-color: #dc3545;
+}
+
+.quantity-display {
+    font-size: 16px;
+    margin: 0 10px; /* Espaço ao redor da quantidade */
+}
+
+/* Estilo do resumo do pedido */
+#order-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#order-items {
+    list-style: none;
+}
+
+#order-items.hidden {
+    display: none;
+}
+
+/* Estilo do botão de pagamento */
+#payment-button {
+    margin-top: 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#payment-button.hidden {
+    display: none;
+}
+
+/* Estilo do overlay de pagamento */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+.overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+}
+
+#total-payment {
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+#payment-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#payment-form input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button#confirm-payment {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button#close-overlay {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .accompaniment-item {
+        flex-direction: column; /* Continuar em coluna para maior flexibilidade */
+        align-items: flex-start;
+    }
+
+    .quantity-controls {
+        display: flex; /* Garantir que os botões fiquem em linha */
+        align-items: center;
+        gap: 5px; /* Espaço entre os botões e a quantidade */
+        justify-content: flex-start; /* Alinha os botões à esquerda */
+    }
+
+    .increment, .decrement {
+        width: auto; /* Ajustar a largura dos botões */
+        margin: 0; /* Remover margens laterais */
+    }
+
+    .quantity-display {
+        margin: 0 5px; /* Ajustar margem para melhor visualização */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 18px; /* Diminuir o tamanho da fonte do h2 */
+    }
+
+    .quantity-controls {
+        gap: 10px; /* Maior espaço entre botões em telas menores */
+    }
+
+    .increment, .decrement {
+        width: auto; /* Ajustar para não ocupar toda a largura */
+    }
+}
+
+/* Estilo do botão toggle-summary */
+button#toggle-summary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Adicionar margin-top para separação */
+    display: inline-block; /* Para garantir que o botão seja centralizado */
+}
+
+/* Estilo do contêiner do botão para centralização */
+button#toggle-summary-container {
+    text-align: center; /* Centraliza o conteúdo do contêiner */
+}

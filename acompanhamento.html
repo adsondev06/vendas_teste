@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo do Pedido</title>
+    <link rel="stylesheet" href="CSS/acompanhamento.css">
+</head>
+<body>
+    <header>
+        <h1>Acompanhamento</h1>
+    </header>
+    <main>
+        <section id="order-accompaniment">
+            <h2>Bebidas</h2>
+            <div class="accompaniment-item">
+                <span>Coca-Cola</span>
+                <span>R$6,00</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+            <div class="accompaniment-item">
+                <span>Coca-Cola Zero</span>
+                <span>R$6,00</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+            <div class="accompaniment-item">
+                <span>Guaraná Antártica</span>
+                <span>R$6,00</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+            <div class="accompaniment-item">
+                <span>Guaraviton</span>
+                <span>R$3,00</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+            <div class="accompaniment-item">
+                <span>Água Mineral</span>
+                <span>R$3,00</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+        </section>
+
+        <section id="order-accompaniment-others">
+            <h2>Acompanhamento</h2>
+            <div class="accompaniment-item">
+                <span>Vinagrete</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+            <div class="accompaniment-item">
+                <span>Batata ao Molho</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+            <div class="accompaniment-item">
+                <span>Shoyu</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+            <div class="accompaniment-item">
+                <span>Molho Branco</span>
+                <button class="decrement">-</button>
+                <span class="quantity-display">0</span>
+                <button class="increment">+</button>
+            </div>
+        </section>
+
+        <section id="order-utensils">
+            <h2>Talher</h2>
+            <label>
+                <input type="radio" name="utensil" value="hashi"> Hashi
+            </label>
+            <label>
+                <input type="radio" name="utensil" value="fork-knife"> Garfo e Faca
+            </label>
+        </section>
+
+        <section id="order-select">
+            <h2>Selecione</h2>
+            <label>
+                <input type="radio" name="delivery-option" value="eat-now"> Comer Agora
+            </label>
+            <label>
+                <input type="radio" name="delivery-option" value="takeaway"> Para viagem <span>Adicional de R$1,00</span>
+            </label>
+        </section>
+
+        <section id="order-summary">
+            <h2>Resumo do Pedido</h2>
+            <div id="summary-header">
+                <span id="order-total">Total: R$0,00</span>
+                <button id="toggle-summary">Mostrar Detalhes</button>
+            </div>
+            <ul id="order-items" class="hidden"></ul>
+            <button id="payment-button" class="hidden">Ir para Pagamento</button>
+        </section>
+    </main>
+
+    <div id="payment-overlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Escolha o Método de Pagamento</h2>
+            <p id="total-payment"></p> <!-- Elemento para mostrar o total a pagar -->
+            <form id="payment-form">
+                <label>
+                    <input type="radio" name="payment-method" value="credit-card"> Cartão de Crédito
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="debit-card"> Cartão de Débito
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="pix"> Pix
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="cash"> Pagar no Caixa
+                </label>
+                <button type="button" id="confirm-payment">Confirmar Pagamento</button>
+                <button type="button" id="close-overlay">Fechar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="JS/acompanhamento.js"></script>
+</body>
+</html>

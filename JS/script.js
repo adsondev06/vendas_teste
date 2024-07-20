@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartItems = document.getElementById('cart-items');
     const totalPriceDisplay = document.getElementById('total-price');
     const cartModal = document.getElementById('cart');
-    const continueButton = document.getElementById('continue-button');
     const cartToggle = document.getElementById('cart-toggle');
     const cartCounter = document.getElementById('cart-counter'); // Elemento onde será exibido o contador
 
@@ -263,5 +262,20 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             vibrateScreen(); // Chama a função de vibração sempre que o botão de incremento é clicado
         });
+    });
+
+    // Adiciona a funcionalidade ao botão de prosseguir
+    const proceedButton = document.getElementById('prosseguir');
+    proceedButton.addEventListener('click', () => {
+        // Salva os itens do carrinho no localStorage
+        const cartData = [...cartItems.children].map(cartItem => ({
+            name: cartItem.getAttribute('data-name'),
+            preparation: cartItem.getAttribute('data-preparation'),
+            quantity: parseInt(cartItem.getAttribute('data-quantity')),
+            price: parseFloat(cartItem.textContent.split(' - ')[1].replace('R$', '').replace(',', '.'))
+        }));
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+        // Redireciona para acompanhamento.html
+        window.location.href = 'acompanhamento.html';
     });
 });
